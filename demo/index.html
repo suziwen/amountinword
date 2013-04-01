@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>中文金额小写转大写插件</title>
+
+<script src="http://www.google.com/jsapi"></script>
+<script>
+  // Load jQuery
+  google.load("jquery", "1.3.2");
+</script>
+<script type='text/javascript' src='../jQuery.amountinwords.js' charset='gb2312'></script>
+<script language="javascript" type="text/javascript">
+$(function() {
+$("#orignamounts").amountinwords({
+	targets:[{
+			targetid:'wordsresult',
+			type:'div',
+			displaymode:'words'
+		},{
+			targetid:'thousandsresult',
+			type:'input',
+			displaymode:'thousands'
+		}],
+	forcefit:true,
+	needinitdisplay:true
+ })
+});
+</script>
+
+</head>
+
+<body>
+<input type="text" name="orignamounts" value="32344450.03" id="orignamounts" />
+<input type="text" name="thousandsresult" value="" id="thousandsresult" />
+<div id="wordsresult"></div>
+</body>
+</html>
