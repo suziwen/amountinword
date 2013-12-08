@@ -1,79 +1,288 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Amountinword : 数字金额转换成繁体" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Amountinword by suziwen</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Amountinword</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Amountinword</h1>
+        <p class="header">数字金额转换成繁体</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/suziwen/amountinword">View on GitHub</a>
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/suziwen/amountinword/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/suziwen/amountinword/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/suziwen/amountinword">View On GitHub</a></li>
+        </ul>
 
-          <h1 id="project_title">Amountinword</h1>
-          <h2 id="project_tagline">数字金额转换成繁体</h2>
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/suziwen">suziwen</a></p>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/suziwen/amountinword/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/suziwen/amountinword/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+      </header>
+      <section>
+        <p>描述：</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>1.须要JQUERY版本：1.3.*或以上
+2.整数支持到千亿，小数支持到厘
+3.仅对中文进行支持</p>
+配置项:
+<p>
+needinitdisplay:false/true,初始化时如果有值是否同步显示到指定的域，默认为false,当为TRUE，且绑定的域有值，指定的目标域存在时，将目标域显示出转换后的数据
+forcefit:true/false,是否强制用户输入正确的金额格式,默认为真
+values：["零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖"],用户可以自己定制大写内容
+targets：[{用户必须指定目标域，
+        targetid:'',目标域的ID，不包括#
+        type:'',目标类型：，div,input,textarea
+        displaymod:''显示模式：大写:words,千分制:thousands
+    },{
+        
+    }
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+    ],
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<p>用法：
+引入JQUERY最新版本：</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<div class="highlight highlight-html"><pre>
+</pre></div>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<p>引入插件：</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<div class="highlight highlight-html"><pre>
+</pre></div>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<p>例子：</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>1.强制输入正确的金额格式：xxxxxxxxxxxxxx.xxx(x代表数字)</p>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<div class="highlight highlight-javascript"><pre>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#id"</span><span class="p">).</span><span class="nx">amountinwords</span><span class="p">({</span>
+    <span class="nx">targets</span><span class="o">:</span><span class="p">[{</span>
+            <span class="nx">targetid</span><span class="o">:</span><span class="s1">'wordsresult'</span><span class="p">,</span>
+            <span class="nx">type</span><span class="o">:</span><span class="s1">'div'</span><span class="p">,</span>
+            <span class="nx">displaymode</span><span class="o">:</span><span class="s1">'words'</span>
+        <span class="p">}],</span>
+    <span class="nx">forcefit</span><span class="o">:</span><span class="kc">true</span>
+<span class="p">});</span>
+</pre></div>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>2.金额大写显示：</p>
+
+<div class="highlight highlight-javascript"><pre>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#id"</span><span class="p">).</span><span class="nx">amountinwords</span><span class="p">({</span>
+    <span class="nx">targets</span><span class="o">:</span><span class="p">[{</span>
+            <span class="nx">targetid</span><span class="o">:</span><span class="s1">'wordsresult'</span><span class="p">,</span>
+            <span class="nx">type</span><span class="o">:</span><span class="s1">'div'</span><span class="p">,</span>
+            <span class="nx">displaymode</span><span class="o">:</span><span class="s1">'words'</span>
+        <span class="p">}]</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>2.千分制形式显示金额：</p>
+
+<div class="highlight highlight-javascript"><pre>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#id"</span><span class="p">).</span><span class="nx">amountinwords</span><span class="p">({</span>
+    <span class="nx">targets</span><span class="o">:</span><span class="p">[{</span>
+            <span class="nx">targetid</span><span class="o">:</span><span class="s1">'wordsresult'</span><span class="p">,</span>
+            <span class="nx">type</span><span class="o">:</span><span class="s1">'div'</span><span class="p">,</span>
+            <span class="nx">displaymode</span><span class="o">:</span><span class="s1">'words'</span>
+        <span class="p">}]</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>4.多目标域显示结果:</p>
+
+<div class="highlight highlight-javascript"><pre>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#id"</span><span class="p">).</span><span class="nx">amountinwords</span><span class="p">({</span>
+    <span class="nx">targets</span><span class="o">:</span><span class="p">[{</span>
+            <span class="nx">targetid</span><span class="o">:</span><span class="s1">'wordsresult'</span><span class="p">,</span>
+            <span class="nx">type</span><span class="o">:</span><span class="s1">'div'</span><span class="p">,</span>
+            <span class="nx">displaymode</span><span class="o">:</span><span class="s1">'words'</span>
+        <span class="p">},{</span>
+            <span class="nx">targetid</span><span class="o">:</span><span class="s1">'thousandsresult'</span><span class="p">,</span>
+            <span class="nx">type</span><span class="o">:</span><span class="s1">'input'</span><span class="p">,</span>
+            <span class="nx">displaymode</span><span class="o">:</span><span class="s1">'thousands'</span>
+        <span class="p">}]</span>
+    <span class="nx">forcefit</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+    <span class="nx">needinitdisplay</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+    
+<span class="p">});</span>
+</pre></div>
+
+<p>HTML部分代码：</p>
+
+<div class="highlight highlight-html"><pre>
+
+</pre></div>
+
+<p>注意：</p>
+
+<p>1.目前只支持到12位数字，即千亿;正打算开发支持更大的数据量</p>
+
+<p>2.仅支持中文金额</p>
+
+<p>插件代码：</p>
+
+<div class="highlight highlight-javascript"><pre>
+<span class="cm">/***</span>
+<span class="cm">*</span>
+<span class="cm">*须要JQUERY版本：1.3.*或以上</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*用法：</span>
+<span class="cm">*引入插件：</span>
+<span class="cm">*needinitdisplay:false/true,初始化时如果有值是否同步显示到指定的域，默认为false,当为TRUE，且绑定的域有值，指定的目标域存在时，将目标域显示出转换后的数据</span>
+<span class="cm">*forcefit:true/false,是否强制用户输入正确的金额格式,默认为真</span>
+<span class="cm">*values：["零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖"],用户可以自己定制大写内容</span>
+<span class="cm">*targets：[{用户必须指定目标域，</span>
+<span class="cm">*       targetid:'',目标域的ID，不包括#</span>
+<span class="cm">*       type:'',目标类型：，div,input,textarea</span>
+<span class="cm">*       displaymod:''显示模式：大写:words,千分制:thousands</span>
+<span class="cm">*   },{</span>
+<span class="cm">*       </span>
+<span class="cm">*   }</span>
+<span class="cm">*</span>
+<span class="cm">*   ],</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*例子：</span>
+<span class="cm">*</span>
+<span class="cm">*$("#id").amountinwords({</span>
+<span class="cm">*   targets:[{</span>
+<span class="cm">*           targetid:'wordsresult',</span>
+<span class="cm">*           type:'div',</span>
+<span class="cm">*           displaymode:'words'</span>
+<span class="cm">*       },{</span>
+<span class="cm">*           targetid:'thousandsresult',</span>
+<span class="cm">*           type:'input',</span>
+<span class="cm">*           displaymode:'thousands'</span>
+<span class="cm">*       }]</span>
+<span class="cm">*   forcefit:true,</span>
+<span class="cm">*   needinitdisplay:true,</span>
+<span class="cm">*   </span>
+<span class="cm">*});</span>
+<span class="cm">*HTML部分代码：</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*注意：</span>
+<span class="cm">*目前只支持到12位数字，即千亿;正打算开发支持更大的数据量</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">*</span>
+<span class="cm">****/</span>
+
+<span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">amountinwords</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">config</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},</span>
+            <span class="p">{</span>
+                <span class="nx">needinitdisplay</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">forcefit</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">digits</span><span class="o">:</span> <span class="p">[</span><span class="s2">""</span><span class="p">,</span> <span class="s2">"拾"</span><span class="p">,</span> <span class="s2">"佰"</span><span class="p">,</span> <span class="s2">"仟"</span><span class="p">],</span>
+                <span class="nx">values</span><span class="o">:</span> <span class="p">[</span><span class="s2">"零"</span><span class="p">,</span> <span class="s2">"壹"</span><span class="p">,</span> <span class="s2">"贰"</span><span class="p">,</span> <span class="s2">"叁"</span><span class="p">,</span> <span class="s2">"肆"</span><span class="p">,</span> <span class="s2">"伍"</span><span class="p">,</span> <span class="s2">"陆"</span><span class="p">,</span> <span class="s2">"柒"</span><span class="p">,</span> <span class="s2">"捌"</span><span class="p">,</span> <span class="s2">"玖"</span><span class="p">],</span>
+                <span class="nx">adigits</span><span class="o">:</span> <span class="p">[</span><span class="s2">"圆"</span><span class="p">,</span> <span class="s2">"万"</span><span class="p">,</span> <span class="s2">"亿"</span><span class="p">],</span>
+                <span class="nx">mindigits</span><span class="o">:</span> <span class="p">[</span><span class="s2">"厘"</span><span class="p">,</span> <span class="s2">"分"</span><span class="p">,</span> <span class="s2">"角"</span><span class="p">],</span>
+                <span class="nx">targets</span><span class="o">:</span> <span class="s1">''</span> <span class="c1">//转换后显示到指定的域，必须为INPUT,TEXTAREA等。传进来的对像必须含有targetid,type(div,input,textarea),displaymode(words,thousands)</span>
+            <span class="p">},</span>
+            <span class="nx">config</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">needinitdisplay</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">()))</span> <span class="p">{</span>
+                <span class="nx">displayresult</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
+            <span class="p">}</span>
+            <span class="kd">function</span> <span class="nx">displayresult</span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">resultcaches</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+                <span class="nx">$</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">targets</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">displaymode</span> <span class="o">==</span> <span class="s1">'words'</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">resultcaches</span><span class="p">[</span><span class="s1">'words'</span><span class="p">])</span> <span class="p">{</span>
+                            <span class="kd">var</span> <span class="nx">_words</span> <span class="o">=</span> <span class="nx">getamountinwords</span><span class="p">(</span><span class="nx">amount</span><span class="p">);</span>
+                            <span class="nx">resultcaches</span><span class="p">[</span><span class="s1">'words'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">_words</span><span class="p">;</span>
+                        <span class="p">}</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s1">'div'</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="nx">$</span><span class="p">(</span><span class="s1">'#'</span> <span class="o">+</span> <span class="nx">n</span><span class="p">.</span><span class="nx">targetid</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">resultcaches</span><span class="p">[</span><span class="s1">'words'</span><span class="p">]);</span>
+                        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s1">'input'</span> <span class="o">||</span> <span class="nx">n</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s1">'textarea'</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="nx">$</span><span class="p">(</span><span class="s1">'#'</span> <span class="o">+</span> <span class="nx">n</span><span class="p">.</span><span class="nx">targetid</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">resultcaches</span><span class="p">[</span><span class="s1">'words'</span><span class="p">]);</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">displaymode</span> <span class="o">==</span> <span class="s1">'thousands'</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">resultcaches</span><span class="p">[</span><span class="s1">'thousands'</span><span class="p">])</span> <span class="p">{</span>
+                            <span class="kd">var</span> <span class="nx">_thousands</span> <span class="o">=</span> <span class="nx">getamountinthousands</span><span class="p">(</span><span class="nx">amount</span><span class="p">);</span>
+                            <span class="nx">resultcaches</span><span class="p">[</span><span class="s1">'thousands'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">_thousands</span><span class="p">;</span>
+                        <span class="p">}</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s1">'div'</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="nx">$</span><span class="p">(</span><span class="s1">'#'</span> <span class="o">+</span> <span class="nx">n</span><span class="p">.</span><span class="nx">targetid</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">resultcaches</span><span class="p">[</span><span class="s1">'thousands'</span><span class="p">]);</span>
+                        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s1">'input'</span> <span class="o">||</span> <span class="nx">n</span><span class="p">.</span><span class="nx">type</span> <span class="o">==</span> <span class="s1">'textarea'</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="nx">$</span><span class="p">(</span><span class="s1">'#'</span> <span class="o">+</span> <span class="nx">n</span><span class="p">.</span><span class="nx">targetid</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">resultcaches</span><span class="p">[</span><span class="s1">'thousands'</span><span class="p">]);</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">});</span>
+            <span class="p">}</span>
+            <span class="kd">function</span> <span class="nx">getamountinthousands</span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">txt</span> <span class="o">=</span> <span class="nx">amount</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">"."</span><span class="p">);</span>
+                <span class="k">while</span> <span class="p">(</span><span class="sr">/\d{4}(,|$)/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">txt</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="nx">txt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">txt</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d)(\d{3}(,|$))/</span><span class="p">,</span> <span class="s2">"$1,$2"</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">_result</span> <span class="o">=</span> <span class="nx">txt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="nx">txt</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="s2">"."</span> <span class="o">+</span> <span class="nx">txt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">:</span> <span class="s2">""</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nx">_result</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">keyup</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">amount</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">forcefit</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">amount</span> <span class="o">=</span> <span class="nx">amount</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/[^\d\.]/g</span><span class="p">,</span> <span class="s2">""</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\.\d{3}).+$/</span><span class="p">,</span> <span class="s2">"$1"</span><span class="p">);</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">amount</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="nx">displayresult</span><span class="p">(</span><span class="nx">amount</span><span class="p">);</span>
+
+            <span class="p">});</span>
+            <span class="kd">function</span> <span class="nx">getamountinwords</span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">amount</span><span class="p">))</span> <span class="k">return</span> <span class="s2">"错误的数据格式"</span><span class="p">;</span>
+                <span class="kd">var</span> <span class="nx">number</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">amount</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">;</span>
+                <span class="nx">number</span> <span class="o">=</span> <span class="nx">number</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s1">'.'</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">integer</span> <span class="o">=</span> <span class="nx">number</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+                <span class="kd">var</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">integer</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">len</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">)</span> <span class="k">return</span> <span class="s2">"数值超出范围！支持的最大数值为 999999999999.99"</span><span class="p">;</span>
+
+                <span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="nx">integer</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">dsl</span> <span class="o">=</span> <span class="nx">num</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+                <span class="kd">var</span> <span class="nx">_result</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+                <span class="kd">var</span> <span class="nx">_vi</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span>  <span class="mi">12</span> <span class="o">?</span> <span class="mi">12</span> <span class="o">:</span> <span class="nx">dsl</span><span class="p">);</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+
+                    <span class="kd">var</span> <span class="nx">_t</span> <span class="o">=</span> <span class="nx">integer</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span> <span class="o">-</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">len</span> <span class="o">-</span> <span class="nx">i</span><span class="p">);</span>
+                    <span class="kd">var</span> <span class="nx">_ts</span> <span class="o">=</span> <span class="nx">_t</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+                    <span class="kd">var</span> <span class="nx">_tslength</span> <span class="o">=</span> <span class="nx">_ts</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+                    <span class="kd">var</span> <span class="nx">_tresult</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+                    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">_i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">_i</span> 
+</pre></div>
       </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Amountinword maintained by <a href="https://github.com/suziwen">suziwen</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
-
-    
-
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
   </body>
 </html>
